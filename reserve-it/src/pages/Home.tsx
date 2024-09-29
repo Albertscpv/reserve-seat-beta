@@ -2,9 +2,13 @@ function Home (){
     return(
         <>
         <div className="">
-            <h1 className="flex justify-center text-3xl place-content-center">Bienvenidos a la prueba beta de Reserve It</h1>
+            <h1 className="flex justify-center text-3xl place-content-center">
+                Beta Test
+            </h1>
         </div>
-        <span className="font-bold">Usa la barra de navegacion para visitar las páginas</span>
+        <span className="font-bold">Lorem ipsum</span>
+
+        <button>Log In</button>
         </>
     )
 } 
