@@ -5,9 +5,10 @@ import Home from "../src/pages/Home"
 import Paquetes from "../src/pages/Paquetes"
 import Salones from "../src/pages/Salones"
 import Contacto from "../src/pages/Contacto"
+import UserRegister from "./pages/UserRegister";
 
 
-function App() {
+const App = () => {
 
   return (
     <>
@@ -19,6 +20,7 @@ function App() {
             <Route path="/paquetes"  element={<Paquetes/>} />
             <Route path="/salones" element={<Salones/>}/>
             <Route path="/contacto" element={<Contacto/>}/>
+            <Route path="/userRegister" element={<UserRegister/>}/>
           </Routes>
         </main>
       </Router>
