@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { collection, addDoc, getDocs, updateDoc, deleteDoc, doc } from 'firebase/firestore';
 import { db } from '/workspaces/reserve-seat-beta/reserve-it/firebaseConfig.ts'; // Asegúrate de usar el archivo firebaseConfig.ts
+// Asegúrate de usar el archivo firebaseConfig.ts
+
 
 interface Salon {
   id: string;
@@ -49,10 +51,10 @@ const SalonPage = () => {
     fetchSalons();
   };
 
+    
   useEffect(() => {
     fetchSalons();
   }, []);
-
   return (
     <>
       <h1>Gestión de Salones</h1>
