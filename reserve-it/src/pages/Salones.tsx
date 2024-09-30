@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { collection, addDoc, getDocs, updateDoc, deleteDoc, doc } from 'firebase/firestore';
-import { db } from '/workspaces/reserve-seat-beta/reserve-it/firebaseConfig.ts'; // Asegúrate de usar el archivo firebaseConfig.ts
-// Asegúrate de usar el archivo firebaseConfig.ts
+import { db } from '/workspaces/reserve-seat-beta/reserve-it/firebaseConfig.ts'; 
+
 
 
 interface Salon {
@@ -32,18 +32,18 @@ const SalonPage = () => {
       await addDoc(collection(db, 'salones'), {
         name,
         description,
-        features: features.split(',').map(f => f.trim()), // Convertir características a array
+        features: features.split(',').map(f => f.trim()), // Convert features to array
         available,
       });
       setNewSalon({ name: '', description: '', features: '', available: false });
-      fetchSalons(); // Recargar salones
+      fetchSalons(); // Reload salones
     }
   };
 
   const handleUpdateSalon = async (id: string, updatedSalon: Partial<Salon>) => {
     const salonRef = doc(db, 'salones', id);
     await updateDoc(salonRef, updatedSalon);
-    fetchSalons(); // Recargar salones
+    fetchSalons(); // Reload salones
   };
 
   const handleDeleteSalon = async (id: string) => {
@@ -60,38 +60,38 @@ const SalonPage = () => {
       <h1>Gestión de Salones</h1>
     <div className=''>
 
-      {/* Formulario para agregar un nuevo salón */}
+      {/* Add new Salon */}
       <form onSubmit={handleAddSalon} className='text-black flex gap-4 justify-center p-4'>
         <input
-          type="text"
+          type='text'
           value={newSalon.name}
           onChange={(e) => setNewSalon({ ...newSalon, name: e.target.value })}
-          placeholder="Nombre del salón"
+          placeholder='Nombre del salón'
         />
         <input
-          type="text"
+          type='text'
           value={newSalon.description}
           onChange={(e) => setNewSalon({ ...newSalon, description: e.target.value })}
-          placeholder="Descripción"
+          placeholder='Descripción'
         />
         <input
-          type="text"
+          type='text'
           value={newSalon.features}
           onChange={(e) => setNewSalon({ ...newSalon, features: e.target.value })}
-          placeholder="Características (separadas por comas)"
+          placeholder='Características (separadas por comas)'
         />
         <label className='text-white flex gap-2'>
           Disponible:
           <input
-            type="checkbox"
+            type='checkbox'
             checked={newSalon.available}
             onChange={(e) => setNewSalon({ ...newSalon, available: e.target.checked })}
           />
         </label>
-        <button className='text-black bg-sky-200 p-2 rounded-full ' type="submit">Agregar Salón</button>
+        <button className='text-black bg-sky-200 p-2 rounded-full ' type='submit'>Agregar Salón</button>
       </form>
 
-      {/* Lista de salones */}
+      {/* Salon Array */}
       <ul className='flex gap-4 text-start'>
         {salons.map((salon) => (
           <li key={salon.id}>

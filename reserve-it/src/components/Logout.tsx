@@ -9,22 +9,22 @@ const Logout = () => {
   const handleLogout = async () => {
     try {
       await signOut(auth);
-      navigate('/'); // Redirigir a la página de inicio de sesión
+      navigate('/'); // Redirect to the login page
     } catch (error) {
-      console.error('Error al cerrar sesión:', error);
+      console.error('Error log in:', error);
     }
   };
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (!user) {
-        navigate('/userRegister'); // Redirigir al inicio de sesión si no hay usuario autenticado
+        navigate('/userRegister'); // Redirect to login if there is no authenticated user
       }
     });
 
     return () => unsubscribe();
   }, [navigate]);
   return(
-    <button onClick={handleLogout}>Cerrar Sesión</button>
+    <button onClick={handleLogout}>Logout</button>
   ) 
 };
 

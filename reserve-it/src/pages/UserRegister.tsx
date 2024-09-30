@@ -8,7 +8,7 @@ const AuthPage = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [isRegister, setIsRegister] = useState(false);
-  const navigate = useNavigate(); // Inicializamos useNavigate
+  const navigate = useNavigate(); // Start the useNavigate
 
 
 // Register user into the page
@@ -18,7 +18,7 @@ const AuthPage = () => {
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       console.log('Usuario registrado:', userCredential.user);
-      navigate('/salones'); // Redirigir a la página de salones
+      navigate('/salones'); // Redirect to the salon page
     } catch (error: any) {
       setError(error.message);
     }
@@ -29,8 +29,8 @@ const AuthPage = () => {
     setError('');
     try {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
-      console.log('Usuario inició sesión:', userCredential.user);
-      navigate('/salones'); // Redirigir a la página de salones
+      console.log('Log In succesfull:', userCredential.user);
+      navigate('/salones'); // Redirect to the salon page
     } catch (error: any) {
       setError(error.message);
     }
@@ -42,27 +42,27 @@ const AuthPage = () => {
 
   return (
     <div>
-      <h1>{isRegister ? 'Registrarse' : 'Iniciar Sesión'}</h1>
+      <h1>{isRegister ? 'Register' : 'Log In'}</h1>
       {error && <p style={{ color: 'red' }}>{error}</p>}
 
       <form className='text-black' onSubmit={isRegister ? handleRegister : handleLogin}>
         <input
-          type="email"
-          placeholder="Correo electrónico"
+          type='email'
+          placeholder='Correo electrónico'
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
         <input
-          type="password"
-          placeholder="Contraseña"
+          type='password'
+          placeholder='Contraseña'
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button className='text-white' type="submit">{isRegister ? 'Registrarse' : 'Iniciar Sesión'}</button>
+        <button className='text-white' type='submit'>{isRegister ? 'Registrarse' : 'Iniciar Sesión'}</button>
       </form>
 
       <button  onClick={toggleAuthMode}>
-        {isRegister ? '¿Ya tienes cuenta? Iniciar Sesión' : '¿No tienes cuenta? Registrarse'}
+        {isRegister ? 'Already have an account? Sign In' : 'Do not have an account? Register'}
       </button>
       
     </div>

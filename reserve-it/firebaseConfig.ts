@@ -2,11 +2,8 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+//DATA API (IT NEEDS TO BE IN A .ENV FILE)
 const firebaseConfig = {
   apiKey: "AIzaSyAE2Mwixqk3hSzYVChCmAD5rzHGSzHuxSc",
   authDomain: "sample-firebase-ai-app-9699f.firebaseapp.com",
