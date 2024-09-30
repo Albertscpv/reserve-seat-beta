@@ -11,14 +11,17 @@ const NavBar = () => {
     ];
     return(
         <>
+        <div className="flex flex-row">
         <ul className="flex text-white gap-4 mb-16">
             {navLinks.map((navLink => (
                 <li key={navLink.path}>
                     <Link to={navLink.path}>{navLink.title}</Link>
                 </li>                
             )))}
-            <Logout/>
+                <Logout/>
         </ul>
+
+        </div>
         </>
     )
 
