@@ -57,11 +57,10 @@ const SalonPage = () => {
   }, []);
   return (
     <>
-      <h1>Gestión de Salones</h1>
-    <div className=''>
-
+      <h1 className='font-bold text-3xl'>Gestión de Salones</h1>
+    <div className= 'flex flex-col w-full md:w-1/2 xl:w-2/5 2xl:w-2/5 3xl:w-1/3 mx-auto p-8 md:p-10 2xl:p-12 3xl:p-14 bg-[#ffffff]/30 backdrop-blur-md  rounded-2xl shadow-xl text-black mt-4'>
       {/* Add new Salon */}
-      <form onSubmit={handleAddSalon} className='text-black flex gap-4 justify-center p-4'>
+      <form onSubmit={handleAddSalon} className='text-black flex gap-4 justify-center p-4 flex-col'>
         <input
           type='text'
           value={newSalon.name}
