@@ -6,6 +6,7 @@ import Paquetes from "../src/pages/Paquetes"
 import Salones from "../src/pages/Salones"
 import Contacto from "../src/pages/Contacto"
 import UserRegister from "./pages/UserRegister";
+import Footer from "./components/Footer"
 
 
 const App = () => {
@@ -23,6 +24,7 @@ const App = () => {
             <Route path="/userRegister" element={<UserRegister/>}/>
           </Routes>
         </main>
+        <Footer/>
       </Router>
     </>
   )
