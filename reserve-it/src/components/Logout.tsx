@@ -24,7 +24,7 @@ const Logout = () => {
     return () => unsubscribe();
   }, [navigate]);
   return(
-    <button onClick={handleLogout}>Logout</button>
+    <button className='font-bold' onClick={handleLogout}>Logout</button>
   ) 
 };
 
