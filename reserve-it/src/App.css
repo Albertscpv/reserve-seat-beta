@@ -1,5 +1,6 @@
 #root{
-    background: #000;
+    background: url(./assets/wallhaven-l8x1pr.jpg);
+    background-size: cover;
     color: white;  
     padding: 2rem;
     text-align: center;

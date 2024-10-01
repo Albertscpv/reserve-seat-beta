@@ -7,7 +7,6 @@ const NavBar = () => {
         {title: 'Salones', path: '/Salones'},
         {title: 'Paquetes', path: '/Paquetes'},
         {title: 'Contacto', path: '/Contacto'},
-        {title: 'Register', path: '/userRegister'}
     ];
     return(
         <>
