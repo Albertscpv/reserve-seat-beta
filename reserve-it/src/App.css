@@ -5,3 +5,13 @@
     text-align: center;
     margin: auto;
 }
+
+/* Home Grid */
+#content-box{
+    display: grid;
+    grid-template-areas: "aside main"
+                         "aside main"
+    ;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}

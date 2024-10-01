@@ -1,17 +1,11 @@
 const Home = () => {
     return(
         <>
-        <div className=''>
-            <h1 className='flex justify-center text-3xl place-content-center font-bold'>
-                Beta Test
-            </h1>
-            <div className='flex flex-col gap-4 mt-6'>
-            <span className='font-bold'>Lorem ipsum</span>
-                
+            <div id="content-box" className="relative h-screen p-2">
+                <div className="[grid-area:aside] bg-white p-12">Aside</div>
+                <div className="[grid-area:main] bg-black p-12">Main</div>
             </div>
-        </div>
-
-        </>
+       </>
     )
 } 
 
