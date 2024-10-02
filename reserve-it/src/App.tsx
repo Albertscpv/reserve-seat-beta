@@ -1,12 +1,16 @@
+import React, { Suspense, lazy } from "react"
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import './App.css'
 import NavBar from "./components/NavBar";
-import Home from "../src/pages/Home"
-import Paquetes from "../src/pages/Paquetes"
-import Salones from "../src/pages/Salones"
-import Contacto from "../src/pages/Contacto"
-import UserRegister from "./pages/UserRegister";
-import Footer from "./components/Footer"
+
+const Home = lazy(() => import("../src/pages/Home"))
+const Paquetes = lazy(() =>import("../src/pages/Paquetes")) 
+const Salones = lazy(() => import("../src/pages/Salones")) 
+const Contacto = lazy(()=> import("../src/pages/Contacto")) 
+const UserRegister = lazy(() => import("../src/pages/UserRegister"))
+
+import Footer from "../src/components/Footer" 
+import Loader from "./components/Loader";
 
 
 const App = () => {
@@ -16,6 +20,7 @@ const App = () => {
       <Router>
         <main className="min-h-screen">
           <NavBar/>
+          <Suspense fallback={<Loader/>}>
           <Routes>
             <Route path="/"             element={<Home/>}/>
             <Route path="/paquetes"     element={<Paquetes/>} />
@@ -23,6 +28,7 @@ const App = () => {
             <Route path="/contacto"     element={<Contacto/>}/>
             <Route path="/userRegister" element={<UserRegister/>}/>
           </Routes>
+          </Suspense>
         </main>
         <Footer/>
       </Router>
