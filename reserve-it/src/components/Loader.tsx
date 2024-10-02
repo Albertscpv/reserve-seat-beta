@@ -1,6 +1,8 @@
-const Loader = () =>{
+const Loader = () => {
     return(
-        <><span>Loading</span></>
+        <>
+            <span>Loading...</span>
+        </>
     )
 }
 export default Loader

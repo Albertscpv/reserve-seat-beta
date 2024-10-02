@@ -12,7 +12,7 @@ interface Package{
 }
 
 
-function Paquetes (){
+const Paquetes = () => {
 
     const [packages, setPackages] = useState<Package[]>([]);
     const [newPackage, setNewPackage] = useState({name: '', price: '', description : '', features: '', available: false });
@@ -58,11 +58,10 @@ function Paquetes (){
         }, [])
 
     return(
-        <>
-            <div>
-                <h2>Gestion de Paquetes</h2>
-            </div>
-            <form onSubmit={handleAddPackage} className='text-black flex gap-4 justify-center'>
+        <>  
+            <h2>Gestion de Paquetes</h2>
+            <div className= 'flex flex-col w-full md:w-1/2 xl:w-2/5 2xl:w-2/5 3xl:w-1/3 mx-auto p-8 md:p-10 2xl:p-12 3xl:p-14 bg-[#ffffff]/30 backdrop-blur-md  rounded-2xl shadow-xl text-black mt-4'>
+            <form onSubmit={handleAddPackage} className='text-black flex gap-4 flex-col justify-center'>
                 <input
                     type='text'
                     value={newPackage.name}
@@ -98,6 +97,7 @@ function Paquetes (){
                 </label>
                 <button className='text-black bg-sky-200 p-2 rounded-full' type='submit'>Add Package</button>
             </form>
+            </div>
 
             <ul className='flex gap-4 text-start'>
                 {packages.map((paquete)=>(

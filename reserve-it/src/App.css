@@ -9,9 +9,12 @@
 /* Home Grid */
 #content-box{
     display: grid;
-    grid-template-areas: "aside main"
-                         "aside main"
+    width: full;
+    grid-template-areas: "main"
+                         "main"
     ;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 2fr;
+    grid-template-rows: 2fr;
+    place-content: center;
+    justify-content: center;
 }
