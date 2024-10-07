@@ -13,7 +13,7 @@ const NavBar = () => {
     return(
         <>
         <div className="flex flex-row p-6">
-        <ul className="flex text-white font-bold gap-4 flex-grow">
+        <ul className="flex text-white gap-4 flex-grow">
             {navLinks.map((navLink => (
                 <li key={navLink.path}>
                     <Link to={navLink.path}>{navLink.title}</Link>

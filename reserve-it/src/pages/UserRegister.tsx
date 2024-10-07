@@ -82,7 +82,7 @@ const AuthPage = () => {
         />
         </div>
         </div>
-        <button className='text-white mb-4 rounded-lg hover:bg-white hover:text-black transition duration-10-00 p-4 bg-black' type='submit'>{isRegister ? 'Registrarse' : 'Iniciar Sesión'}</button>
+        <button className='text-white mb-4 rounded-lg hover:bg-white hover:text-black transition duration-1000 p-4 bg-black' type='submit'>{isRegister ? 'Registrarse' : 'Iniciar Sesión'}</button>
       </form>
         <button className='hover:text-[#fff] transition duration-600' onClick={toggleAuthMode}>
           {isRegister ? 'Already have an account? Sign In' : 'Do not have an account? Register'}
