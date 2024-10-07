@@ -60,7 +60,7 @@ const Paquetes = () => {
     return(
         <>  
             <h2 className='text-2xl font-bold'>Gestion de Paquetes</h2>
-            <div className= 'flex flex-col w-full md:w-1/2 xl:w-2/5 2xl:w-2/5 3xl:w-1/3 mx-auto p-8 md:p-10 2xl:p-12 3xl:p-14 bg-[#ffffff]/30 backdrop-blur-md  rounded-2xl shadow-xl text-black mt-4'>
+        <div className= 'flex flex-col w-full md:w-1/2 xl:w-2/5 2xl:w-2/5 3xl:w-1/3 mx-auto p-8 md:p-10 2xl:p-12 3xl:p-14 bg-[#ffffff]/30 backdrop-blur-md  rounded-2xl shadow-xl text-black mt-4'>
             <form onSubmit={handleAddPackage} className='text-black flex gap-4 flex-col justify-center'>
                 <input
                     className='pl-10 mb-2 bg-gray-50 text-gray-600 border focus:border-transparent border-gray-300 sm:text-sm rounded-lg ring ring-transparent focus:ring-1 focus:outline-none focus:ring-gray-400 block w-full p-2.5 rounded-l-lg py-3 px-4'
@@ -106,8 +106,8 @@ const Paquetes = () => {
                 </button>
             </form>
             </div>
-        <div className='flex p-2 wrap'>
-            <ul className='flex gap-4 text-start flex-wrap place-content-center my-6'>
+        <div className='flex p-2 place-content-center'>
+            <ul className='flex flex-wrap text-start gap-4 my-6'>
                 {packages.map((paquete)=>(
                     <li className='bg-white/30 backdrop-blur-md p-4 rounded-md' key={paquete.id}>
                         <h3 className='font-bold text-2xl'>{paquete.name}</h3>

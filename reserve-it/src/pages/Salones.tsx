@@ -56,23 +56,26 @@ const SalonPage = () => {
       }, []);
     return (
       <>
-        <h1 className='font-bold text-3xl'>Gestión de Salones</h1>
+        <h2 className='font-bold text-3xl'>Gestión de Salones</h2>
     <div className= 'flex flex-col w-full md:w-1/2 xl:w-2/5 2xl:w-2/5 3xl:w-1/3 mx-auto p-8 md:p-10 2xl:p-12 3xl:p-14 bg-[#ffffff]/30 backdrop-blur-md  rounded-2xl shadow-xl text-black mt-4'>
-      {/* Add new Salon */}
+
       <form onSubmit={handleAddSalon} className='text-black flex gap-4 justify-center p-4 flex-col'>
         <input
+          className='pl-10 mb-2 bg-gray-50 text-gray-600 border focus:border-transparent border-gray-300 sm:text-sm rounded-lg ring ring-transparent focus:ring-1 focus:outline-none focus:ring-gray-400 block w-full p-2.5 rounded-l-lg py-3 px-4'
           type='text'
           value={newSalon.name}
           onChange={(e) => setNewSalon({ ...newSalon, name: e.target.value })}
           placeholder='Nombre del salón'
         />
         <input
+          className='pl-10 mb-2 bg-gray-50 text-gray-600 border focus:border-transparent border-gray-300 sm:text-sm rounded-lg ring ring-transparent focus:ring-1 focus:outline-none focus:ring-gray-400 block w-full p-2.5 rounded-l-lg py-3 px-4'
           type='text'
           value={newSalon.description}
           onChange={(e) => setNewSalon({ ...newSalon, description: e.target.value })}
           placeholder='Descripción'
         />
         <input
+          className='pl-10 mb-2 bg-gray-50 text-gray-600 border focus:border-transparent border-gray-300 sm:text-sm rounded-lg ring ring-transparent focus:ring-1 focus:outline-none focus:ring-gray-400 block w-full p-2.5 rounded-l-lg py-3 px-4'
           type='text'
           value={newSalon.features}
           onChange={(e) => setNewSalon({ ...newSalon, features: e.target.value })}
@@ -86,22 +89,23 @@ const SalonPage = () => {
             onChange={(e) => setNewSalon({ ...newSalon, available: e.target.checked })}
           />
         </label>
-        <button className='text-black bg-sky-200 p-2 rounded-full ' type='submit'>Agregar Salón</button>
+        <button className='text-white bg-black p-2 rounded-full hover:bg-white hover:text-black transition duration-500' type='submit'>Agregar Salón</button>
       </form>
     </div>
-    <div className='flex flex-row flex-1 p-4 mt-4 gap-4'>
-      <ul className='flex flex-wrap gap-4 text-start'>
+    
+    <div className='flex p-2'>
+      <ul className='flex flex-wrap place-content-center gap-4 text-start my-6'>
         {salons.map((salon) => (
-          <li key={salon.id}>
+          <li className='bg-white/30 backdrop-blur-md p-4 rounded-md' key={salon.id}>
             <h3 className='font-bold text-2xl'>{salon.name}</h3>
             <p>Descripción: {salon.description || 'Sin descripción'}</p>
             <p>Características: {salon.features.join(', ')}</p>
             <p>{salon.available ? 'Disponible' : 'No disponible'}</p>
             <div className='flex gap-4'>
-            <button className='p-4 bg-sky-200 text-black rounded-xl my-4 ' onClick={() => handleUpdateSalon(salon.id, { available: !salon.available })}>
+            <button className='p-4 bg-black text-white rounded-md my-4 hover:bg-white hover:text-black transition duration-500 ' onClick={() => handleUpdateSalon(salon.id, { available: !salon.available })}>
               Cambiar disponibilidad
             </button>
-            <button className='p-4 bg-sky-200 text-black rounded-xl my-4 ' onClick={() => handleDeleteSalon(salon.id)}>Eliminar</button>
+            <button className='p-4 bg-[#D40101] text-white rounded-md my-4 hover:bg-[#D40101]/30 transition duration-600' onClick={() => handleDeleteSalon(salon.id)}>Eliminar</button>
             </div>
           </li>
         ))}
