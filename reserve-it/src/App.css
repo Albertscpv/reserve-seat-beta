@@ -23,7 +23,7 @@ h1,h2{
     font-family: "Cabinet-Bold";
 }
 
-p{
+p, :placeholder-shown{
     font-family: "Cabinet-Light";
 }
 
