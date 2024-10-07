@@ -18,3 +18,20 @@
     place-content: center;
     justify-content: center;
 }
+
+h1,h2{
+    font-family: "Cabinet-Bold";
+}
+
+p{
+    font-family: "Cabinet-Light";
+}
+
+@font-face {
+    font-family: "Cabinet-Bold";
+    src: url(../public/fonts/CabinetGrotesk_Complete/CabinetGrotesk_Complete/Fonts/WEB/fonts/CabinetGrotesk-Bold.woff);
+}
+@font-face {
+    font-family: "Cabinet-Light";
+    src: url(../public/fonts/CabinetGrotesk_Complete/CabinetGrotesk_Complete/Fonts/WEB/fonts/CabinetGrotesk-Thin.woff);
+}
