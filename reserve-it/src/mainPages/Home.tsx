@@ -4,7 +4,7 @@ const Home = () => {
     const navigate = useNavigate();
     
     const handleStartPage = () =>{
-        navigate('/salones')
+        navigate('/tutorialPage') //create route to show how the app works
     }
 
     return(
