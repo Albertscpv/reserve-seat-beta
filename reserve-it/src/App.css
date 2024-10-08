@@ -29,9 +29,9 @@ p, :placeholder-shown{
 
 @font-face {
     font-family: "Cabinet-Bold";
-    src: url(/public/fonts/CabinetGrotesk_Complete/CabinetGrotesk_Complete/Fonts/WEB/fonts/CabinetGrotesk-Bold.woff);
+    src: url(/fonts/CabinetGrotesk_Complete/CabinetGrotesk_Complete/Fonts/WEB/fonts/CabinetGrotesk-Bold.woff);
 }
 @font-face {
     font-family: "Cabinet-Light";
-    src: url(/public/fonts/CabinetGrotesk_Complete/CabinetGrotesk_Complete/Fonts/WEB/fonts/CabinetGrotesk-Thin.woff);
+    src: url(/fonts/CabinetGrotesk_Complete/CabinetGrotesk_Complete/Fonts/WEB/fonts/CabinetGrotesk-Thin.woff);
 }

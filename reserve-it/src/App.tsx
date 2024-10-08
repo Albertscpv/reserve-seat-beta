@@ -3,14 +3,15 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import './App.css'
 import NavBar from "./components/NavBar";
 
-const Home = lazy(() => import("../src/pages/Home"))
-const Paquetes = lazy(() =>import("../src/pages/Paquetes")) 
-const Salones = lazy(() => import("../src/pages/Salones")) 
-const Contacto = lazy(()=> import("../src/pages/Contacto")) 
-const UserRegister = lazy(() => import("../src/pages/UserRegister"))
+const Home = lazy(() => import("./mainPages/Home"))
+const PaquetesPage = lazy(() =>import("./mainPages/PaquetesPage")) 
+const SalonesPage = lazy(() => import("./mainPages/SalonesPage")) 
+const Contacto = lazy(()=> import("./mainPages/Contacto")) 
+const UserRegister = lazy(() => import("./authPages/UserRegister"))
 
 import Footer from "../src/components/Footer" 
 import Loader from "./components/Loader";
+
 
 
 const App = () => {
@@ -23,8 +24,8 @@ const App = () => {
           <Suspense fallback={<Loader/>}>
           <Routes>
             <Route path="/"             element={<Home/>}/>
-            <Route path="/paquetes"     element={<Paquetes/>} />
-            <Route path="/salones"      element={<Salones/>}/>
+            <Route path="/paquetes"     element={<PaquetesPage/>} />
+            <Route path="/salones"      element={<SalonesPage/>}/>
             <Route path="/contacto"     element={<Contacto/>}/>
             <Route path="/userRegister" element={<UserRegister/>}/>
           </Routes>

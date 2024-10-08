@@ -1,7 +1,5 @@
-This application is still in process where we are building solutions. 
+Reserve'It
 
-The application uses the following technologies:
+It is an application designed to facilitate the management of information for special events companies. This information includes packages, rooms, prices and client lists. 
 
-Tailwindcss
-React
-Firebase.
+Among the functions that are available:

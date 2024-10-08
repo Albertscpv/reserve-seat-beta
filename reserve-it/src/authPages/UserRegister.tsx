@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom'; // Importamos useNavigate
-import { auth } from '/workspaces/reserve-seat-beta/reserve-it/firebaseConfig.ts';
+import { auth, db } from '/workspaces/reserve-seat-beta/reserve-it/firebaseConfig.ts';
 import { MessageIcon, PasswordIcon } from '../Icons/IconsManager';
+import { setDoc, doc, getDoc } from 'firebase/firestore';
 
 const AuthPage = () => {
   const [email, setEmail] = useState('');
@@ -18,7 +19,14 @@ const AuthPage = () => {
     setError('');
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-      console.log('Usuario registrado:', userCredential.user);
+      const user = userCredential.user
+
+      await setDoc(doc(db, 'users', user.uid),{
+        email: user.email,
+        role: 'admin'
+      });
+
+      console.log('User register', user)
       navigate('/'); // Redirect to the salon page
     } catch (error: any) {
       setError(error.message);
@@ -30,8 +38,16 @@ const AuthPage = () => {
     setError('');
     try {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
-      console.log('Log In succesfull:', userCredential.user);
-      navigate('/'); // Redirect to the salon page
+      const user = userCredential.user;
+
+      const userDoc = await getDoc(doc(db, 'users', user.uid));
+      const userData = userDoc.data();
+
+      if(userData?.role === 'admin'){
+        navigate('/')
+      }else{
+        navigate('/')
+      }
     } catch (error: any) {
       setError(error.message);
     }

@@ -6,7 +6,7 @@ import Logout from "./Logout";
 const NavBar = () => {
     const navLinks = [
         {title: 'Home', path: '/'},
-        {title: 'Salones', path: '/Salones'},
+        {title: 'Salones', path: '/salones'},
         {title: 'Paquetes', path: '/Paquetes'},
         {title: 'Contacto', path: '/Contacto'},
     ];
