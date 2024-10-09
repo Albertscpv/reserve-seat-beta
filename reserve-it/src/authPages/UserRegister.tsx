@@ -58,7 +58,8 @@ const AuthPage = () => {
   };
 
   return (
-    <div className='flex flex-col w-full md:w-1/2 xl:w-2/5 2xl:w-2/5 3xl:w-1/3 mx-auto p-8 md:p-10 2xl:p-12 3xl:p-14 bg-[#ffffff]/30 backdrop-blur-md  rounded-2xl shadow-xl text-black mt-4'>
+    <div className='min-h-screen flex items-center justify-center'>
+    <div className=' flex justify-center flex-col w-full md:w-1/2 xl:w-2/5 2xl:w-2/5 3xl:w-1/3 mx-auto p-8 md:p-10 2xl:p-12 3xl:p-14 bg-[#ffffff]/30 backdrop-blur-md rounded-2xl shadow-xl text-black'>
       <div className='flex flex-row justify-center gap-3 pb-4'>
         <div>
             {/* image */}
@@ -103,6 +104,7 @@ const AuthPage = () => {
         <button className='hover:text-[#fff] transition duration-600' onClick={toggleAuthMode}>
           {isRegister ? 'Already have an account? Sign In' : 'Do not have an account? Register'}
         </button>
+    </div>
     </div>
   );
 };

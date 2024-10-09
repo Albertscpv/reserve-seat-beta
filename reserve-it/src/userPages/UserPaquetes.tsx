@@ -15,7 +15,6 @@ interface Package{
 const Paquetes = () => {
 
     const [packages, setPackages] = useState<Package[]>([]);
-    const [newPackage, setNewPackage] = useState({name: '', price: '', description : '', features: '', available: false });
 
     const fetchPackages = async () =>{
         const querySnapshot = await getDocs(collection(db, 'paquetes'))
@@ -25,34 +24,6 @@ const Paquetes = () => {
         });
         setPackages(packageArray);
     }
-
-        const handleAddPackage = async(e: React.FormEvent) => {
-            e.preventDefault();
-            const { name, price, description, features, available  } = newPackage;
-            if(name.trim()){
-                await addDoc(collection(db, 'paquetes'), {
-                name,
-                price,
-                description,
-                features: features.split(',').map(f => f.trim()),
-                available,
-                });
-            };
-            setNewPackage({name: '', price: '', description : '', features: '', available: false });
-            fetchPackages();
-        }
-        
-        const handleUpdatePackage = async (id:string, updatedPackage: Partial<Package>) => {
-            const salonRef = doc(db, 'paquetes', id);
-            await updateDoc(salonRef, updatedPackage);
-            fetchPackages();
-        }
-
-        const handleDeleteSalon = async (id:string) => {
-            await deleteDoc(doc(db, 'paquetes', id));
-            fetchPackages()
-        };
-
         useEffect(() => {
             fetchPackages();
         }, [])
@@ -71,10 +42,10 @@ const Paquetes = () => {
                         <p>{paquete.available ? 'Available' : 'Not available'}</p>
 
                         <div className='flex gap-4 p-2'>
-                            <button className='p-4 bg-black text-white rounded-md my-4 hover:bg-white hover:text-black transition duration-500' onClick={() => handleUpdatePackage(paquete.id, {available: !paquete.available})}>
+                            <button className='p-4 bg-black text-white rounded-md my-4 hover:bg-white hover:text-black transition duration-500' >
                                 Change Availability
                             </button>
-                            <button className='p-4 bg-[#D40101] text-white rounded-md my-4 hover:bg-[#D40101]/30 transition duration-600' onClick={() => handleDeleteSalon(paquete.id)}>Delete</button>
+                            <button className='p-4 bg-[#D40101] text-white rounded-md my-4 hover:bg-[#D40101]/30 transition duration-600'>Delete</button>
                         </div>
                     </li>
                 ))}
