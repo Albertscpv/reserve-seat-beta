@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { auth, db } from '/workspaces/reserve-seat-beta/firebaseConfig.ts';
+import { auth, db } from '../FirebaseConfig/firebaseConfig';
 import { doc, getDoc } from "firebase/firestore"
 
 const useUserRole = () => {

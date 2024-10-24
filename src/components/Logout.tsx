@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { auth } from '/workspaces/reserve-seat-beta/firebaseConfig.ts';
+import { auth } from '../FirebaseConfig/firebaseConfig';
 import { useNavigate } from 'react-router-dom';
 import { signOut, onAuthStateChanged } from 'firebase/auth'; 
 import { LogoutIcon } from '../Icons/IconsManager';
