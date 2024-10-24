@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { collection, addDoc, getDocs, updateDoc, deleteDoc, doc } from 'firebase/firestore';
-import { db } from '/workspaces/reserve-seat-beta/firebaseConfig.ts'; // Asegúrate de usar el archivo firebaseConfig.ts
+import { db } from '../FirebaseConfig/firebaseConfig'; // Asegúrate de usar el archivo firebaseConfig.ts
 
 interface Package{
     id: string;

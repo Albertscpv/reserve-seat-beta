@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom'; // Importamos useNavigate
-import { auth, db } from '/workspaces/reserve-seat-beta/firebaseConfig.ts';
+import { auth, db } from '../FirebaseConfig/firebaseConfig';
 import { MessageIcon, PasswordIcon } from '../Icons/IconsManager';
 import { setDoc, doc, getDoc } from 'firebase/firestore';
 

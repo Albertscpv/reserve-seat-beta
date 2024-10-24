@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { collection,  getDocs } from 'firebase/firestore';
-import { db } from '/workspaces/reserve-seat-beta/firebaseConfig.ts';
+import { db } from '../FirebaseConfig/firebaseConfig';
 interface Package{
     id: string;
     name:string;

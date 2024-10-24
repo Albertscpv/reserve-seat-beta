@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { onAuthStateChanged, User } from 'firebase/auth';
-import { auth } from '/workspaces/reserve-seat-beta/firebaseConfig.ts';
+import { auth } from '../FirebaseConfig/firebaseConfig';
 
 const useAuth = () => {
   const [currentUser, setCurrentUser] = useState<User | null>(null);
